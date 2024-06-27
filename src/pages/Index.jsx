@@ -31,6 +31,7 @@ const Index = () => {
                     ? "bg-blue-500 text-white self-end speech-bubble-right"
                     : "bg-gray-300 text-black self-start speech-bubble-left"
                 }`}
+                style={{ letterSpacing: "-0.5px" }} // Add this line to reduce letter spacing
               >
                 {message.text}
                 <div
