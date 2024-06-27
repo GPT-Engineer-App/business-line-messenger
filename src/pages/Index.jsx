@@ -26,13 +26,20 @@ const Index = () => {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`mb-2 p-2 rounded-lg ${
+                className={`mb-2 p-2 rounded-lg relative max-w-xs ${
                   message.sender === "user"
-                    ? "bg-blue-500 text-white self-end"
-                    : "bg-gray-300 text-black self-start"
+                    ? "bg-blue-500 text-white self-end speech-bubble-right"
+                    : "bg-gray-300 text-black self-start speech-bubble-left"
                 }`}
               >
                 {message.text}
+                <div
+                  className={`absolute w-0 h-0 border-t-8 border-r-8 border-b-8 border-l-8 ${
+                    message.sender === "user"
+                      ? "border-t-transparent border-r-transparent border-b-transparent border-l-blue-500 right-0 -mr-2"
+                      : "border-t-transparent border-r-gray-300 border-b-transparent border-l-transparent left-0 -ml-2"
+                  }`}
+                ></div>
               </div>
             ))}
           </ScrollArea>
