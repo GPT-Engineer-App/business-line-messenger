@@ -26,7 +26,7 @@ const Index = () => {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`mb-2 p-2 rounded-lg relative max-w-xs text-right ${
+                className={`mb-2 px-2 py-1 rounded-lg relative max-w-xs text-right ${
                   message.sender === "user"
                     ? "bg-blue-500 text-white self-end speech-bubble-right"
                     : "bg-gray-300 text-black self-start speech-bubble-left"
